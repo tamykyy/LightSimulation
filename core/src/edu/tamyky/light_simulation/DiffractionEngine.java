@@ -11,11 +11,6 @@ import com.badlogic.gdx.graphics.glutils.ShapeRenderer;
 import com.badlogic.gdx.math.Vector2;
 import com.badlogic.gdx.utils.Disposable;
 
-import java.io.BufferedWriter;
-import java.io.FileWriter;
-import java.io.IOException;
-import java.text.NumberFormat;
-
 import static com.badlogic.gdx.graphics.GL20.GL_COLOR_BUFFER_BIT;
 
 public final class DiffractionEngine extends ApplicationAdapter implements Disposable {
@@ -86,11 +81,11 @@ public final class DiffractionEngine extends ApplicationAdapter implements Dispo
         this.dimensions = new Vector2(WIDTH / (float) waveHeights[0].length, HEIGHT / (float) waveHeights.length);
     }
 
+    private int frame = 0;
+
     /**
      * @param dt Delta time
      */
-    private int frame = 0;
-
     public void update(float dt) {
 
         if (frame < 5000) {
